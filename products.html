@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Home Bakery Darbhanga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <div class="navbar-brand">
+                <i class="fas fa-birthday-cake"></i>
+                Home Bakery
+            </div>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link active">Products</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="cart-icon-wrapper">
+                    <a href="cart.html" class="nav-link" style="font-size: 1.2rem;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
+                    </a>
+                </div>
+                <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme" style="background: transparent; border: none; cursor: pointer; font-size: 1.1rem; color: inherit; display: flex; align-items: center;">
+                    <i class="fas fa-moon"></i>
+                </button>
+                                <a href="login.html" class="action-btn" style="padding: 8px 16px; font-size: 0.9rem; display:inline-flex; align-items:center; justify-content:center;">Login</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <section style="padding: 50px 20px; background: white; min-height: 100vh;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <!-- Page Title -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h1 style="font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 15px;">
+                    <i class="fas fa-birthday-cake"></i> Our Delicious Cakes
+                </h1>
+                <p style="font-size: 1.1rem; color: #6B7280;">Freshly baked cakes made with love and premium ingredients</p>
+            </div>
+
+            <!-- Filter and Search Section -->
+            <div style="background: #FEF3C7; padding: 25px; border-radius: 12px; margin-bottom: 40px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: end;">
+                    <div>
+                        <label style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--secondary-color);">Search Products</label>
+                        <input type="text" id="searchInput" placeholder="Search cakes..." onkeyup="filterProducts()" style="width: 100%; padding: 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--secondary-color);">Sort By Price</label>
+                        <select id="sortSelect" onchange="filterProducts()" style="width: 100%; padding: 12px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 1rem;">
+                            <option value="default">Default</option>
+                            <option value="low-high">Low to High</option>
+                            <option value="high-low">High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" style="text-align: center; padding: 50px 20px; display: none;">
+                <i class="fas fa-search" style="font-size: 3rem; color: #D1D5DB; margin-bottom: 20px; display: block;"></i>
+                <h2 style="color: var(--secondary-color); font-size: 1.5rem; margin-bottom: 10px;">No Products Found</h2>
+                <p style="color: #6B7280; margin-bottom: 20px;">Try adjusting your search or filters</p>
+                <button onclick="resetFilters()" class="action-btn">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Home Bakery Darbhanga</h3>
+                <p>Freshly baked cakes and pastries delivered to your door.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/homebakerydarbhanga" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/917979748225" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Kathalbari Chowk, near Bawarchi Restaurant, Darbhanga, Bihar</li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+917979748225">+91 7979748225</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:homebakerydarbhanga@gmail.com">homebakerydarbhanga@gmail.com</a></li>
+                    <li><i class="fas fa-clock"></i> 9 AM - 9 PM (Daily)</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Special Offers</h3>
+                <ul>
+                    <li><a href="#">Birthday Cakes</a></li>
+                    <li><a href="#">Wedding Cakes</a></li>
+                    <li><a href="#">Custom Designs</a></li>
+                    <li><a href="#">Bulk Orders</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Home Bakery Darbhanga. All rights reserved. | <a style="color: #FED7AA;">Privacy Policy</a> | <a style="color: #FED7AA;">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

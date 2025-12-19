@@ -1,0 +1,5 @@
+/* responsive.css — mobile tweaks */
+@media (max-width:640px){
+  .container{padding-left:1rem;padding-right:1rem}
+  header nav{display:none}
+}

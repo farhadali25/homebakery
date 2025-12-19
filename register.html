@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register — HomeBakery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50">
+  <main class="min-h-screen flex items-center justify-center">
+    <form class="bg-white p-8 rounded shadow w-full max-w-md" id="register-form">
+      <h2 class="text-2xl font-bold mb-4">Create account</h2>
+      <label class="block mb-2">Name<input type="text" id="name" class="w-full border p-2 rounded" required></label>
+      <label class="block mb-2">Email<input type="email" id="email" class="w-full border p-2 rounded" required></label>
+      <label class="block mb-4">Password<input type="password" id="password" class="w-full border p-2 rounded" required></label>
+      <button class="w-full bg-pink-500 text-white py-2 rounded">Register</button>
+    </form>
+  </main>
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+</body>
+</html>
